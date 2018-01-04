@@ -6,7 +6,9 @@
         "log4js": "0.6.21"
     },
     "devDependencies": {
-        "should": ">=0.0.1",
-        "mocha": ">=0.0.1"
+        "@types/node": "^8.5.5",
+        "@types/node-uuid": "0.0.28",
+        "mocha": ">=0.0.1",
+        "should": ">=0.0.1"
     }
 }
