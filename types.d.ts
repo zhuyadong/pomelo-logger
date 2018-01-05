@@ -14,7 +14,13 @@ declare class Logger {
   readonly level: Level;
   setLevel(level: string | Level): void;
   removeLevel(): void;
-  log(): void;
+  log(...args: any[]): void;
+  trace(...args: any[]): void;
+  debug(...args: any[]): void;
+  info(...args: any[]): void;
+  warn(...args: any[]): void;
+  error(...args: any[]): void;
+  fatal(...args: any[]): void;
   isLevelEnabled(otherLevel: string | Level): boolean;
   isTraceEnabled(): boolean;
   isDebugEnabled(): boolean;
@@ -56,7 +62,10 @@ declare module "log4js" {
     coloredLayout: (loggingEvent: any) => string;
     layout: (name: string, config: any) => string;
   };
-  export const appenders:any;
-  export const appenderMakers:{[idx:string]:(arg:any)=>Logger};
-  export const connectLogger:(logger:Logger, options?:any)=>(req:any, res:any, next:Function)=>void;
+  export const appenders: any;
+  export const appenderMakers: { [idx: string]: (arg: any) => Logger };
+  export const connectLogger: (
+    logger: Logger,
+    options?: any
+  ) => (req: any, res: any, next: Function) => void;
 }
