@@ -8,7 +8,7 @@ const funcs = {
 	'opts': doOpts
 };
 
-export function getLogger(categoryName:string) {
+export function getLogger(categoryName:string, ..._:string[]) {
 	let args = arguments;
 	let prefix = "";
 	for (let i = 1; i < args.length; i++) {
